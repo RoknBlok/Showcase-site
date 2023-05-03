@@ -19,7 +19,7 @@
 <body>
 	<header id="header-container" class="w3-theme w3-padding">
 		<button id="open-button" class="w3-button w3-theme w3-xlarge">☰</button>
-		<button id="close-button" class="w3-button w3-theme w3-xlarge" style="display: none">X</button>
+		<button id="close-button" class="w3-button w3-theme w3-xlarge" style="display: none">×</button>
 		<h1>Bienvenue chez CERI's Guitars</h1>
 	</header>
 
