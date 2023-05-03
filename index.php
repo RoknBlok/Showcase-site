@@ -35,7 +35,7 @@
 				if ($_GET['page'] == 'produits') {
 					// Afficher la liste des produits
 					echo "<h1>Liste des produits</h1>";
-					// Code pour afficher la liste des produits
+					include("displayProduits.php");
 				} elseif ($_GET['page'] == 'modifprod' && isset($_GET['id'])) {
 					// Afficher le formulaire de modification du produit spécifié
 					echo "<h1>Modifier le produit ".$_GET['id']."</h1>";
