@@ -1,0 +1,58 @@
+<form method="post" enctype="multipart/form-data" action="ajouter_produit.php">
+    <label for="nom">Nom du produit :</label>
+    <input type="text" id="nom" name="nom" required><br>
+  
+    <label for="category">Catégorie :</label>
+    <select name="category" id="category">
+        <option value="guitare">Guitare</option>
+        <option value="basse">Basse</option>
+        <option value="autre">Autre</option>
+    </select>
+    <input type="text" name="new_category" id="new_category" placeholder="Nouvelle catégorie"><br>
+
+  
+    <label for="prix">Prix :</label>
+    <input type="text" id="prix" name="prix" required><br>
+  
+    <label for="image_type">Ajouter une image :</label>
+    <select name="image_type" id="image_type">
+        <option value="url">URL</option>
+        <option value="upload">Télécharger</option>
+    </select>
+
+    <div id="url_input">
+        <label for="image_url">URL de l'image :</label>
+        <input type="text" name="image_url" id="image_url">
+    </div>
+
+    <div id="upload_input" style="display:none;">
+        <label for="image_upload">Image à télécharger :</label>
+        <input type="file" name="image_upload" id="image_upload">
+    </div>
+
+  
+    <input type="submit" value="Ajouter le produit">
+  </form>
+  
+  <script>
+    const imageTypeSelect = document.getElementById('image_type');
+    const urlInput = document.getElementById('url_input');
+    const uploadInput = document.getElementById('upload_input');
+  
+    // fonction pour afficher ou masquer le champ d'URL en fonction de l'option sélectionnée
+    function toggleUrlInput() {
+      if (imageTypeSelect.value === 'url') {
+        urlInput.style.display = 'block';
+        uploadInput.style.display = 'none';
+      } else {
+        urlInput.style.display = 'none';
+        uploadInput.style.display = 'block';
+      }
+    }
+  
+    // on appelle la fonction une première fois pour initialiser l'affichage
+    toggleUrlInput();
+  
+    // on ajoute un écouteur d'événement pour détecter les changements dans la sélection d'options
+    imageTypeSelect.addEventListener('change', toggleUrlInput);
+  </script>
