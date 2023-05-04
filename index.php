@@ -25,7 +25,7 @@
 
 	<nav class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
 		<a href="?page=produits" class="w3-bar-item w3-button">Liste des produits</a>
-		<a href="?page=modifprod&id=1" class="w3-bar-item w3-button">Modifier produit 1</a>
+		<a href="?page=modifprod" class="w3-bar-item w3-button">Modifier un produit</a>
 		<a href="?page=modifprod&id=2" class="w3-bar-item w3-button">Modifier produit 2</a>
 	</nav>
 
@@ -33,13 +33,17 @@
 		<?php
 			if (isset($_GET['page'])) {
 				if ($_GET['page'] == 'produits') {
-					// Afficher la liste des produits
+					// affichage des produits
 					echo "<h1>Liste des produits</h1>";
 					include("displayProduits.php");
 				} elseif ($_GET['page'] == 'modifprod' && isset($_GET['id'])) {
-					// Afficher le formulaire de modification du produit spécifié
+					// modifications d'un produit spécifique
 					echo "<h1>Modifier le produit ".$_GET['id']."</h1>";
 					// Code pour afficher le formulaire de modification du produit spécifié
+				} elseif ($_GET['page'] == 'modifprod' && !isset($_GET['id'])) {
+					//afficher la liste des produits avec un lien pour modifier chaque produit
+					echo "<h1>Modifier un produit</h1>";
+					include("displayProduitsModif.php");
 				} else {
 					echo "<h1>Page non trouvée</h1>";
 				}
