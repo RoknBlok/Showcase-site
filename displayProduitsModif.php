@@ -1,4 +1,20 @@
 <?php
+function supprimer($id) {
+  $file_path = "products.txt";
+  $lines = file($file_path, FILE_IGNORE_NEW_LINES);
+  $new_lines = array();
+  foreach ($lines as $line) {
+    $fields = explode("|", $line);
+    if ($fields[0] == $id) {
+      continue; // ignorer la ligne à supprimer
+    }
+    $new_lines[] = $line;
+  }
+  file_put_contents($file_path, implode("\n", $new_lines));
+}
+
+
+
 // Ouvrir le fichier texte contenant les informations des produits
 $file = fopen("products.txt", "r");
 
@@ -24,7 +40,7 @@ while ($line = fgets($file)) {
               <p>Catégorie: ' . $categorie . '</p>
               <p>Prix: ' . $prix . '</p>
               <a class="w3-button w3-blue" href=?page=modifprod&id='.$id.'>Modifier</a>
-              <button class="w3-button w3-red">Supprimer</button>
+              <button class="w3-button w3-red" onclick="'.supprimer($id).'">Supprimer</button>
             </div>
           </div>';
   }

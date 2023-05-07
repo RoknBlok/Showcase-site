@@ -30,4 +30,26 @@ while ($line = fgets($file)) {
 
 // Fermer le fichier
 fclose($file);
+
+function afficher_produits_filtre($categories) {
+  $file = fopen('produits.txt', 'r');
+
+  while($line = fgets($file)) {
+    $product_info = explode('|', $line);
+    $categorie = $product_info[2];
+
+
+    if(in_array($categorie, $categories)) {
+      echo '<div class="w3-card w3-third">';
+      echo '<img src="' . $product_info[4] . '" style="width:100%">';
+      echo '<div class="w3-container">';
+      echo '<h4>' . $product_info[1] . '</h4>';
+      echo '<p>Catégorie : ' . $categorie . '</p>';
+      echo '<p>Prix : ' . $product_info[3] . '€</p>';
+      echo '</div></div>';
+    }
+  }
+
+  fclose($file);
+}
 ?>
