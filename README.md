@@ -79,7 +79,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 For any questions or inquiries, please contact:
 
-- Your Name: mailto:thahachahbi@outlook.fr
+- Your Name: thahachahbi@outlook.fr
 
 Feel free to reach out for any further information or assistance.
 
