@@ -1,4 +1,3 @@
-# mini_projet_DBweb2
 # Website Showcase - Basses and Guitars Store
 
 This repository contains the code for a showcase website built using PHP, JavaScript, CSS, and HTML. The website utilizes the W3CSS framework to achieve a responsive and visually appealing design. The purpose of the website is to demonstrate the functionalities of a basses and guitars store, including the ability to add, delete, and filter articles, along with displaying the average price on the homepage.
